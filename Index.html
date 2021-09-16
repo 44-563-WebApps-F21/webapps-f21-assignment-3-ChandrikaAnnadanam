@@ -83,15 +83,16 @@
       <blockquote><q>Let's create the logic for the pattern, give above. In the following code snippet, we are starting row and column value from 0. 
           We can also start it from 1, it's your choice.</q></blockquote>
   </pr>
-        <a href="https://www.javatpoint.com/how-to-print-pattern-in-java">U can press this link for Reference</a>
+        <a href="https://cp-algorithms.com/geometry/area-of-simple-polygon.html">U can press this link for Reference</a>
   <pre>
-    for(int i=0; i<row; i++)   
-    {   
-    for(int j=0; j<=i; j++)   
-    {   
-    System.out.print("* ");   
-    }   
-    System.out.println();   
+    double area(const vector<point>& fig) {
+        double res = 0;
+        for (unsigned i = 0; i < fig.size(); i++) {
+            point p = i ? fig[i - 1] : fig.back();
+            point q = fig[i];
+            res += (p.x - q.x) * (p.y + q.y);
+        }
+        return fabs(res) / 2;
     }
      
    </pre>
